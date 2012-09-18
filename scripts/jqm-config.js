@@ -3,6 +3,7 @@ $(document).bind("mobileinit", function () {
     $.mobile.linkBindingEnabled = false;
     $.mobile.hashListeningEnabled = false;
     $.mobile.pushStateEnabled = false;
+    $.mobile.defaultPageTransition = "slide";
     $.mobile.media("screen");
 
     // Remove page from DOM when it's being replaced

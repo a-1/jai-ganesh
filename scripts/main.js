@@ -57,29 +57,26 @@ var AppRouter = Backbone.Router.extend({
     },
 
     home: function() {
-        console.log('#home');
         this.changePage(new HomeView());
     },
 
     page1: function() {
-        console.log('#page1');
         this.changePage(new Page1View());
     },
  
     page2: function() {
-        console.log('#page2');
         this.changePage(new Page2View());
     },
 
     ganeshWallpaper: function() {
-        console.log('#page2');
         this.changePage(new GaneshWallpaper());
-        slider = new Swipe(document.getElementById('slider'), {
-            startSlide: 1,
-            speed: 400,
-            auto: 3000
-        });
-
+        if(!slider) {
+            slider = new Swipe(document.getElementById('slider'), {
+                startSlide: 1,
+                speed: 400,
+                auto: 3000
+            });
+        }
     },
 
     changePage: function(page) {
@@ -101,7 +98,6 @@ var AppRouter = Backbone.Router.extend({
 });
 
 $(document).ready(function() {
-    console.log('document ready');
     app = new AppRouter();
     Backbone.history.start();
 });
